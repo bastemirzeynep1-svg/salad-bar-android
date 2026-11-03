@@ -1,0 +1,12 @@
+plugins { id("com.android.application") }
+android {
+    namespace = "com.exam.saladbar"
+    compileSdk = 34
+    defaultConfig {
+        applicationId = "com.exam.saladbar"
+        minSdk = 26
+        targetSdk = 34
+        versionCode = 1
+        versionName = "1.0"
+    }
+}
