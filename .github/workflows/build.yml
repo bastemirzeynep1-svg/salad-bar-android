@@ -84,16 +84,16 @@ jobs:
             <!-- Restoran Salonu (Arka Plan) ve Müşteri Alanı -->
             <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:background="#FFF3E0">
                 
-                <!-- Dekorasyon: Pencere ve Masalar -->
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="space_evenly" android:layout_marginTop="10dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪟" android:textSize="40sp" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🖼️" android:textSize="40sp" />
+                <!-- Dekorasyon: Pencere ve Masalar (DÜZELTİLDİ) -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="20dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪟" android:textSize="40sp" android:layout_marginEnd="40dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🖼️" android:textSize="40sp" android:layout_marginEnd="40dp" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪟" android:textSize="40sp" />
                 </LinearLayout>
                 
-                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="space_evenly" android:layout_marginTop="70dp">
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪑🍽️🪑" android:textSize="32sp" android:alpha="0.5" />
-                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪴" android:textSize="38sp" android:alpha="0.7" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="80dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪑🍽️🪑" android:textSize="32sp" android:alpha="0.5" android:layout_marginEnd="20dp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪴" android:textSize="38sp" android:alpha="0.7" android:layout_marginEnd="20dp" />
                     <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪑🍽️🪑" android:textSize="32sp" android:alpha="0.5" />
                 </LinearLayout>
 
