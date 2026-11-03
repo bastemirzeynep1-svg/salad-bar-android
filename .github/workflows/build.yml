@@ -70,47 +70,64 @@ jobs:
         
         cat << 'EOF' > app/src/main/res/layout/activity_main.xml
         <?xml version="1.0" encoding="utf-8"?>
-        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent" android:layout_height="match_parent"
-            android:background="#F5F5F5">
+            android:orientation="vertical" android:background="#F5F5F5">
 
-            <!-- Restaurant Tentesi -->
-            <LinearLayout android:id="@+id/header" android:layout_width="match_parent" android:layout_height="wrap_content"
+            <!-- Üst Tente -->
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                 android:background="#2E7D32" android:padding="15dp" android:gravity="center" android:elevation="8dp">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="🏪 THE FRESH BOWL" android:textSize="22sp" android:textStyle="bold" android:textColor="#FFFFFF"/>
             </LinearLayout>
 
-            <!-- Müşteri ve Sipariş Alanı -->
-            <LinearLayout android:id="@+id/customerArea" android:layout_width="match_parent" android:layout_height="wrap_content"
-                android:layout_below="@id/header" android:orientation="vertical" android:gravity="center" android:padding="15dp" android:background="#E8F5E9">
-                <TextView android:id="@+id/scoreText" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="Score: 0" android:textSize="18sp" android:textStyle="bold" android:textColor="#388E3C" />
+            <!-- Restoran Salonu (Arka Plan) ve Müşteri Alanı -->
+            <RelativeLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:background="#FFF3E0">
                 
-                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center" android:layout_marginTop="10dp">
-                    <TextView android:id="@+id/customerEmoji" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                        android:text="🙍‍♂️" android:textSize="65sp" android:layout_marginEnd="15dp"/>
+                <!-- Dekorasyon: Pencere ve Masalar -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="space_evenly" android:layout_marginTop="10dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪟" android:textSize="40sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🖼️" android:textSize="40sp" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪟" android:textSize="40sp" />
+                </LinearLayout>
+                
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="space_evenly" android:layout_marginTop="70dp">
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪑🍽️🪑" android:textSize="32sp" android:alpha="0.5" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪴" android:textSize="38sp" android:alpha="0.7" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🪑🍽️🪑" android:textSize="32sp" android:alpha="0.5" />
+                </LinearLayout>
+
+                <!-- Ön Plan: Müşteri -->
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical" android:gravity="center" android:layout_alignParentBottom="true" android:paddingBottom="10dp">
                     
-                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bubble_shape" android:padding="15dp" android:elevation="4dp">
-                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="I would like:" android:textSize="14sp" android:textStyle="bold" android:textColor="#E65100"/>
-                        <TextView android:id="@+id/orderText" android:layout_width="wrap_content" android:layout_height="wrap_content"
-                            android:text="🥬 🍅" android:textSize="30sp" android:layout_marginTop="5dp"/>
+                    <TextView android:id="@+id/scoreText" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Score: 0" android:textSize="18sp" android:textStyle="bold" android:textColor="#388E3C" android:background="#FFFFFF" android:padding="5dp" android:layout_marginBottom="10dp"/>
+                    
+                    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:gravity="center">
+                        <TextView android:id="@+id/customerEmoji" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="🙍‍♂️" android:textSize="70sp" android:layout_marginEnd="15dp"/>
+                        
+                        <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/bubble_shape" android:padding="10dp" android:elevation="4dp">
+                            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="I would like:" android:textSize="14sp" android:textStyle="bold" android:textColor="#E65100"/>
+                            <TextView android:id="@+id/orderText" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                                android:text="🥬 🍅" android:textSize="28sp" android:layout_marginTop="5dp"/>
+                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
+            </RelativeLayout>
 
             <!-- Mutfak Tezgahı (Ahşap) -->
-            <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
-                android:layout_below="@id/customerArea" android:orientation="vertical" android:gravity="center" android:background="#8D6E63" android:paddingTop="15dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1.2"
+                android:orientation="vertical" android:gravity="center" android:background="#8D6E63" android:paddingTop="10dp">
                 
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                     android:text="🧑‍🍳 Prep Station" android:textSize="18sp" android:textStyle="bold" android:textColor="#FFFFFF" android:layout_marginBottom="10dp"/>
 
-                <!-- Salata Kasesi -->
-                <TextView android:id="@+id/plateText" android:layout_width="280dp" android:layout_height="140dp"
+                <TextView android:id="@+id/plateText" android:layout_width="280dp" android:layout_height="130dp"
                     android:text="" android:textSize="36sp" android:background="@drawable/bowl_shape"
-                    android:gravity="center" android:layout_marginBottom="20dp" android:textColor="#000000"/>
+                    android:gravity="center" android:layout_marginBottom="15dp" android:textColor="#000000"/>
 
                 <GridLayout android:id="@+id/ingredientsGrid" android:layout_width="wrap_content" android:layout_height="wrap_content" android:columnCount="3" android:rowCount="2">
                     <Button android:id="@+id/btn1" android:text="🥬" android:textSize="26sp" android:layout_margin="4dp" android:backgroundTint="#FAFAFA"/>
@@ -120,14 +137,14 @@ jobs:
                     <Button android:id="@+id/btn5" android:text="🧀" android:textSize="26sp" android:layout_margin="4dp" android:backgroundTint="#FAFAFA"/>
                 </GridLayout>
                 
-                <LinearLayout android:id="@+id/actionButtons" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="15dp">
+                <LinearLayout android:id="@+id/actionButtons" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal" android:layout_marginTop="10dp">
                     <Button android:id="@+id/btnClear" android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="TRASH" android:textStyle="bold" android:backgroundTint="#EF5350" android:textColor="#FFFFFF" android:layout_marginEnd="10dp"/>
                     <Button android:id="@+id/btnServe" android:layout_width="wrap_content" android:layout_height="wrap_content"
                         android:text="SERVE ORDER" android:textStyle="bold" android:backgroundTint="#4CAF50" android:textColor="#FFFFFF"/>
                 </LinearLayout>
             </LinearLayout>
-        </RelativeLayout>
+        </LinearLayout>
         EOF
         
         cat << 'EOF' > app/src/main/java/com/exam/saladbar/MainActivity.java
@@ -182,12 +199,10 @@ jobs:
                         score += 10; 
                         scoreText.setText("Score: " + score);
                         
-                        // Başarılı Sunum Animasyonu (Bitmiş Salata Görünümü)
                         customerEmoji.setText("🤩");
                         plateText.setTextSize(45);
                         plateText.setText("✨ 🥗 ✨\nPerfect!");
                         
-                        // Ekranı temizle ve 2 saniye beklet
                         ingredientsGrid.setVisibility(View.INVISIBLE);
                         actionButtons.setVisibility(View.INVISIBLE);
                         
